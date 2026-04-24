@@ -124,7 +124,28 @@
   body {
     @apply bg-background text-foreground;
   }
-  html {
-    @apply font-sans;
-  }
+
+}
+
+
+* {
+  scrollbar-width: thin;
+  scrollbar-color: #334155 transparent;
+}
+
+*::-webkit-scrollbar {
+  width: 4px;
+}
+
+*::-webkit-scrollbar-track {
+  background: transparent;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #334155;
+  border-radius: 999px;
+}
+
+body {
+  font-family: "Inter", system-ui, sans-serif;
 }
