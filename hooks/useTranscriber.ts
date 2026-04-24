@@ -1,7 +1,6 @@
 "use client";
 
 import { useRef, useState, useCallback } from "react";
-import { loadSettings } from "@/lib/SettingsStore";
 
 // We record audio in 30s chunks
 const CHUNK_INTERVAL_MS = 30000;
@@ -42,10 +41,9 @@ export function useTranscriber() {
 
     // Send the audio blob to the transcription API
     try {
-      const { groqApiKey } = loadSettings();
       const form = new FormData();
       form.append("audio", blob);
-      form.append("apiKey", groqApiKey);
+      
       
 
       const res = await fetch("/api/transcribe", { method: "POST", body: form });
