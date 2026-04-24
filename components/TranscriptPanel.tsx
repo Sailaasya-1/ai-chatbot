@@ -64,7 +64,6 @@ export default function TranscriptPanel({ onTranscriptUpdate }: { onTranscriptUp
   // Send the audio blob to the server for transcription and handle the response
   async function transcribeBlob(blob: Blob) {
     const settings = loadSettings();
-    if (!settings.groqApiKey) return;
     
     // Prepare the form data with the audio blob and API key
     const formData = new FormData();
